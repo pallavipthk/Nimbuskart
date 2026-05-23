@@ -1,0 +1,71 @@
+{
+  "scan_timestamp": "2026-01-15T10:00:00Z",
+  "account_id": "000000000000",
+  "region": "us-east-1",
+  "summary": {
+    "total_orphans": 4,
+    "estimated_monthly_waste_usd": 15.42
+  },
+  "findings": [
+    {
+      "resource_id": "vol-0a1b2c3d4e5f67890",
+      "resource_type": "ebs_volume",
+      "reason": "unattached",
+      "age_days": 21,
+      "estimated_monthly_cost_usd": 1.6,
+      "tags": {
+        "Project": null,
+        "Environment": null,
+        "Owner": null,
+        "ManagedBy": "terraform"
+      },
+      "suggested_action": "delete",
+      "safe_to_auto_delete": true
+    },
+    {
+      "resource_id": "i-0deadbeef1234567",
+      "resource_type": "ec2_instance",
+      "reason": "stopped_for_22_days",
+      "age_days": 22,
+      "estimated_monthly_cost_usd": 7.6,
+      "tags": {
+        "Project": "nimbuskart",
+        "Environment": "staging",
+        "Owner": "platform-team",
+        "ManagedBy": "terraform"
+      },
+      "suggested_action": "terminate",
+      "safe_to_auto_delete": true
+    },
+    {
+      "resource_id": "eipalloc-0f1e2d3c4b5a6789",
+      "resource_type": "elastic_ip",
+      "reason": "unassociated",
+      "age_days": 0,
+      "estimated_monthly_cost_usd": 3.65,
+      "tags": {
+        "Project": null,
+        "Environment": null,
+        "Owner": null,
+        "ManagedBy": null
+      },
+      "suggested_action": "release",
+      "safe_to_auto_delete": true
+    },
+    {
+      "resource_id": "vol-0a1b2c3d4e5f67890",
+      "resource_type": "ebs_volume",
+      "reason": "missing_tags:Project,Environment,Owner",
+      "age_days": 0,
+      "estimated_monthly_cost_usd": 0.0,
+      "tags": {
+        "Project": null,
+        "Environment": null,
+        "Owner": null,
+        "ManagedBy": "terraform"
+      },
+      "suggested_action": "tag",
+      "safe_to_auto_delete": false
+    }
+  ]
+}
